@@ -13,7 +13,7 @@ const heroShowcaseData = {
       stat2: 'लाइफटाइम स्ट्रक्चरल गारंटी'
     },
     {
-      title: 'डिज़ाइनर सैनिटरी वेयर',
+      title: 'डिज़ाइनर सैनिटरी',
       subtitle: 'लक्ज़री स्टोन वॉशबेसिन और वॉल-हंग टॉयलेट',
       tag: 'प्रीमियम फिटिंग',
       image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800',
@@ -39,7 +39,7 @@ const heroShowcaseData = {
       stat2: 'Lifetime Structural Guarantee'
     },
     {
-      title: 'Designer Sanitary Ware',
+      title: 'Designer Sanitary',
       subtitle: 'Luxury Stone Washbasins & Wall-Hung Closets',
       tag: 'Premium Fitting',
       image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800',
@@ -127,14 +127,14 @@ const Hero = ({ lang = 'Hindi' }) => {
               className="inline-flex items-center space-x-2 bg-white/90 border border-slate-300/80 text-[#0B192C] px-4 py-2 rounded-full text-xs sm:text-sm font-black uppercase tracking-widest backdrop-blur-md shadow-xs cursor-default"
             >
               <Sparkles className="w-4 h-4 text-[#0284C7] animate-pulse" />
-              <span>{lang === 'Hindi' ? 'रॉयल क्वालिटी स्टोन्स और सैनिटरीवेयर गैलरी' : 'Royal Quality Stones & Sanitaryware Gallery'}</span>
+              <span>{lang === 'Hindi' ? 'रॉयल क्वालिटी स्टोन्स और सैनिटरी गैलरी' : 'Royal Quality Stones & Sanitary Gallery'}</span>
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0B192C] leading-[1.15]">
               {lang === 'Hindi' ? (
-                <>सैंडस्टोन और सैनिटरीवेयर के साथ <br className="hidden sm:inline" />अपने स्थान को <span className="bg-gradient-to-r from-[#0B192C] via-[#1E3E62] to-[#0284C7] bg-clip-text text-transparent">बदलें</span></>
+                <>सैंडस्टोन और सैनिटरी के साथ <br className="hidden sm:inline" />अपने स्थान को <span className="bg-gradient-to-r from-[#0B192C] via-[#1E3E62] to-[#0284C7] bg-clip-text text-transparent">बदलें</span></>
               ) : (
-                <>Transform Your Space With <br className="hidden sm:inline" /><span className="bg-gradient-to-r from-[#0B192C] via-[#1E3E62] to-[#0284C7] bg-clip-text text-transparent">Sandstone</span> & <span className="bg-gradient-to-r from-[#0B192C] via-[#0284C7] to-[#1E3E62] bg-clip-text text-transparent">Sanitaryware</span></>
+                <>Transform Your Space With <br className="hidden sm:inline" /><span className="bg-gradient-to-r from-[#0B192C] via-[#1E3E62] to-[#0284C7] bg-clip-text text-transparent">Sandstone</span> & <span className="bg-gradient-to-r from-[#0B192C] via-[#0284C7] to-[#1E3E62] bg-clip-text text-transparent">Sanitary</span></>
               )}
             </h1>
 

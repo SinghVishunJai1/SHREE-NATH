@@ -8,7 +8,7 @@ const WhatsAppFloat = ({ lang = 'Hindi' }) => {
   const defaultMessage = encodeURIComponent(
     lang === 'Hindi'
       ? 'नमस्ते श्री नाथ मार्बल, मुझे आपके सामान (सैंडस्टोन, टाइल्स आदि) का रेट और डिटेल जाननी है।'
-      : 'Hi Shree Nath Marble & Sanitaryware, I am interested in inquiring about your product range.'
+      : 'Hi Shree Nath Marble & Sanitary, I am interested in inquiring about your product range.'
   );
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;

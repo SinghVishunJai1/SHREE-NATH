@@ -52,7 +52,7 @@ const Navbar = ({ lang, setLang }) => {
                 SHREE NATH
               </span>
               <span className="text-[10px] text-slate-500 font-extrabold tracking-widest uppercase block mt-1">
-                {lang === 'Hindi' ? 'मार्बल और सैनिटरीवेयर' : 'Marble & Sanitaryware'}
+                {lang === 'Hindi' ? 'मार्बल और सैनिटरी' : 'Marble & Sanitary'}
               </span>
             </div>
           </motion.div>

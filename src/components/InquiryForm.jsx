@@ -106,8 +106,8 @@ const InquiryForm = ({ lang = 'Hindi' }) => {
               <option value="Sandstone Door & Window Frame (Chokhat)" className="bg-white text-[#0B192C]">
                 {lang === 'Hindi' ? 'सैंडस्टोन दरवाज़ा और खिड़की फ्रेम (चौखट)' : 'Sandstone Door & Window Frame (Chokhat)'}
               </option>
-              <option value="Sanitary Ware & Washbasins" className="bg-white text-[#0B192C]">
-                {lang === 'Hindi' ? 'सैनिटरी वेयर और वॉशबेसिन' : 'Sanitary Ware & Washbasins'}
+              <option value="Sanitary & Washbasins" className="bg-white text-[#0B192C]">
+                {lang === 'Hindi' ? 'सैनिटरी और वॉशबेसिन' : 'Sanitary & Washbasins'}
               </option>
               <option value="Luxury C.P. Fittings" className="bg-white text-[#0B192C]">
                 {lang === 'Hindi' ? 'बाथरूम नल और फिटिंग्स (C.P. Fittings)' : 'Luxury C.P. Fittings'}

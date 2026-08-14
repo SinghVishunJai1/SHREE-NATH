@@ -8,19 +8,19 @@ const featuresData = {
       icon: Building2,
       title: 'डायरेक्ट खदान (क्वारी) से माल',
       badge: 'सबसे कम दाम',
-      description: 'हम सीधा नेचुरल स्टोन की खदानों से बढ़िया माल लाते हैं, ताकि आपको एकदम होलसेल शोरूम रेट पर मिल सके।'
+      description: 'हम सीधा नेचुरल स्टोन की खदानों से बढ़िया माल लाते हैं, ताकि आपको एकदम होलसेल शोरूम रेट पर मिल सके।'
     },
     {
       icon: Hammer,
-      title: 'पसंद के हिसाब से कटिंग',
-      badge: 'दमदार फिटिंग',
-      description: 'सैंडस्टोन चौखट, खिड़की फ्रेम और हाथ से बने वॉशबेसिन आपके घर के साइज और डिज़ाइन के हिसाब से बिल्कुल सही कटते हैं।'
+      title: 'मजबूत और सटीक बनावट',
+      badge: 'तुरंत उपलब्धता',
+      description: 'सैंडस्टोन चौखट और खिड़की फ्रेम हमेशा स्टॉक में और आपकी जरूरत के अनुसार बेहतरीन फिनिशिंग के साथ उपलब्ध हैं।'
     },
     {
       icon: Store,
       title: 'शोरूम पर आकर देखें',
       badge: 'खुद छूकर देखें',
-      description: 'आप हमारे शोरूम पर आकर सारे सैंडस्टोन डिज़ाइन, टाइल्स, ग्रेनाइट और बाथरूम की फिटिंग्स अपनी आँखों से लाइव देख सकते हैं।'
+      description: 'आप हमारे शोरूम पर आकर सारे सैंडस्टोन डिज़ाइन, टाइल्स, ग्रेनाइट और बाथरूम की फिटिंग्स अपनी आँखों से लाइव देख सकते हैं।'
     },
     {
       icon: Award,
@@ -38,15 +38,15 @@ const featuresData = {
     },
     {
       icon: Hammer,
-      title: 'Custom Precision Cutting',
-      badge: 'Tailored Fit',
-      description: 'Sandstone door frames (chokhat), window frames, and handcrafted washbasins are custom-engineered to match your exact site specifications.'
+      title: 'Strong & Precise Build',
+      badge: 'Immediate Availability',
+      description: 'Sandstone door frames (chokhat) and window frames are readily available in stock with superior finish and structural integrity.'
     },
     {
       icon: Store,
       title: 'Physical Showroom Display',
       badge: 'Touch & Feel',
-      description: 'Visit our premier physical showroom to explore our complete live collection of sandstone finishes, tiles, granite slabs, and sanitaryware fittings.'
+      description: 'Visit our premier physical showroom to explore our complete live collection of sandstone finishes, tiles, granite slabs, and bathroom fittings.'
     },
     {
       icon: Award,
@@ -86,7 +86,6 @@ const About = ({ lang = 'Hindi' }) => {
       id="about" 
       className="py-24 bg-[#F8FAFC] text-[#0B192C] relative overflow-hidden border-t border-slate-300/60 transition-colors duration-500"
     >
-      
       <motion.div 
         animate={{ 
           scale: [1, 1.2, 1],
@@ -115,27 +114,24 @@ const About = ({ lang = 'Hindi' }) => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-3"
         >
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center space-x-2 bg-white/90 border border-slate-300/80 text-[#0B192C] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-xs backdrop-blur-md cursor-default"
-          >
+          <div className="inline-flex items-center space-x-2 bg-white/90 border border-slate-300/80 text-[#0B192C] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-xs backdrop-blur-md cursor-default">
             <Sparkles className="w-4 h-4 text-[#0284C7] animate-pulse" />
             <span>{lang === 'Hindi' ? 'बेहतरीन कारीगरी और शोरूम' : 'Craftsmanship & Showroom Excellence'}</span>
-          </motion.div>
+          </div>
 
           <h2 className="text-3xl sm:text-5xl font-black text-[#0B192C] tracking-tight leading-tight">
             {lang === 'Hindi' ? 'श्री नाथ ' : 'About '} 
             <span className="bg-gradient-to-r from-[#0B192C] via-[#1E3E62] to-[#0284C7] bg-clip-text text-transparent">
-              {lang === 'Hindi' ? 'मार्बल एंड सैनिटरीवेयर' : 'Shree Nath Marble & Sanitaryware'}
+              {lang === 'Hindi' ? 'मार्बल एंड सैनिटरी' : 'Shree Nath Marble & Sanitary'}
             </span>
             {lang === 'Hindi' ? ' के बारे में' : ''}
           </h2>
 
           <p className="text-[#475569] text-xs sm:text-sm leading-relaxed font-semibold max-w-2xl mx-auto">
             {lang === 'Hindi' ? (
-              <>श्री नाथ मार्बल एंड सैनिटरीवेयर <span className="font-extrabold text-[#0B192C]">भोजपुर (बिहार)</span> में आपके सपनों के घर के लिए नेचुरल सैंडस्टोन डोर फ्रेम (चौखट), टाइल्स, ग्रेनाइट और आधुनिक सैनिटरीवेयर का मुख्य शोरूम है। इस वेबसाइट पर आप हमारी पूरी रेंज आसानी से देख सकते हैं।</>
+              <>श्री नाथ मार्बल एंड सैनिटरी <span className="font-extrabold text-[#0B192C]">भोजपुर (बिहार)</span> में आपके सपनों के घर के लिए नेचुरल सैंडस्टोन डोर फ्रेम (चौखट), टाइल्स, ग्रेनाइट और आधुनिक सैनिटरी का मुख्य शोरूम है। इस वेबसाइट पर आप हमारी पूरी रेंज आसानी से देख सकते हैं।</>
             ) : (
-              <>Shree Nath Marble & Sanitaryware is the premier physical showroom destination in <span className="font-extrabold text-[#0B192C]">Bhojpur (Bihar)</span> for natural sandstone door frames (chokhat), premium tiles, granite, and modern sanitaryware tailored for your dream home. Explore our complete range directly through this digital portal.</>
+              <>Shree Nath Marble & Sanitary is the premier physical showroom destination in <span className="font-extrabold text-[#0B192C]">Bhojpur (Bihar)</span> for natural sandstone door frames (chokhat), premium tiles, granite, and modern sanitary tailored for your dream home. Explore our complete range directly through this digital portal.</>
             )}
           </p>
         </motion.div>
@@ -161,13 +157,9 @@ const About = ({ lang = 'Hindi' }) => {
 
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <motion.div 
-                      whileHover={{ rotate: [0, -10, 10, 0] }}
-                      transition={{ duration: 0.5 }}
-                      className="p-3.5 w-12 h-12 bg-gradient-to-br from-[#0B192C] via-[#1E3E62] to-[#0284C7] text-white rounded-2xl flex items-center justify-center font-bold shadow-md shadow-[#0284C7]/20 group-hover:scale-110 transition-transform duration-300"
-                    >
+                    <div className="p-3.5 w-12 h-12 bg-gradient-to-br from-[#0B192C] via-[#1E3E62] to-[#0284C7] text-white rounded-2xl flex items-center justify-center font-bold shadow-md shadow-[#0284C7]/20 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-6 h-6" />
-                    </motion.div>
+                    </div>
 
                     <span className="text-[10px] font-black uppercase tracking-wider text-[#0B192C] bg-slate-100 border border-slate-300/80 px-2.5 py-1 rounded-full shadow-xs">
                       {item.badge}
@@ -191,7 +183,6 @@ const About = ({ lang = 'Hindi' }) => {
             );
           })}
         </motion.div>
-
       </div>
     </section>
   );

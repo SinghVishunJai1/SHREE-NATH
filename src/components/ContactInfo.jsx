@@ -51,8 +51,8 @@ const ContactInfo = ({ lang = 'Hindi' }) => {
 
         <p className="text-[#475569] text-xs sm:text-sm leading-relaxed font-semibold max-w-lg">
           {lang === 'Hindi' 
-            ? 'हमारे शोरूम पर आकर नेचुरल सैंडस्टोन सैंपल, डोर फ्रेम (चौखट), टाइल्स, ग्रेनाइट और सैनिटरीवेयर फिटिंग्स सीधे देखें और सबसे कम होलसेल रेट जानें।'
-            : 'Hamare showroom par aakar natural sandstone samples, door frames (chokhat), tiles, granite, aur sanitaryware fittings direct dekhein aur best wholesale rate jaanein.'}
+            ? 'हमारे शोरूम पर आकर नेचुरल सैंडस्टोन सैंपल, डोर फ्रेम (चौखट), टाइल्स, ग्रेनाइट और सैनिटरी फिटिंग्स सीधे देखें और सबसे कम होलसेल रेट जानें।'
+            : 'Hamare showroom par aakar natural sandstone samples, door frames (chokhat), tiles, granite, aur sanitary fittings direct dekhein aur best wholesale rate jaanein.'}
         </p>
       </motion.div>
 
@@ -122,7 +122,7 @@ const ContactInfo = ({ lang = 'Hindi' }) => {
                 </a>
               </div>
               <p className="text-[#0B192C] font-extrabold text-base mt-0.5">
-                Shree Nath Marble & Sanitaryware
+                Shree Nath Marble & Sanitary
               </p>
               <p className="text-xs text-[#475569] font-medium mt-1 leading-relaxed">
                 {lang === 'Hindi' 

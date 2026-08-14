@@ -25,11 +25,12 @@ const Footer = ({ lang = 'Hindi' }) => {
           
           <div className="inline-flex flex-wrap items-center justify-center gap-1.5 text-xs text-[#475569] font-medium bg-white/90 border border-slate-200/90 px-5 py-2.5 rounded-full shadow-xs backdrop-blur-md">
             <span>&copy; {new Date().getFullYear()}</span>
-            <span className="font-black text-[#0B192C]">Shree Nath Marble & Sanitaryware</span>
+            <span className="font-black text-[#0B192C]">Shree Nath Marble & Sanitary</span>
             <span className="hidden sm:inline">•</span>
             <span className="text-slate-500 font-semibold">
               {lang === 'Hindi' ? 'सभी अधिकार सुरक्षित' : 'All Rights Reserved'}
             </span>
+
           </div>
 
           <div className="mt-3 sm:mt-0 sm:absolute sm:right-0">
