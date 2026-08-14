@@ -58,11 +58,14 @@ const ContactInfo = ({ lang = 'Hindi' }) => {
 
       <div className="space-y-4">
         
-        <motion.div
+        {/* Phone Card made fully clickable and mobile friendly */}
+        <motion.a
           variants={itemVariants}
           whileHover={{ x: 6, scale: 1.01 }}
+          whileTap={{ scale: 0.99 }}
           transition={{ type: 'spring', stiffness: 300 }}
-          className="group relative bg-white/95 border border-slate-200 hover:border-[#0284C7]/60 p-5 rounded-2xl backdrop-blur-xl transition-all duration-300 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-[#0284C7]/15 overflow-hidden"
+          href={`tel:${rawPhone}`}
+          className="group relative bg-white/95 border border-slate-200 hover:border-[#0284C7]/60 p-5 rounded-2xl backdrop-blur-xl transition-all duration-300 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-[#0284C7]/15 overflow-hidden block cursor-pointer"
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-2xl group-hover:bg-[#0284C7]/15 transition-all duration-500" />
           
@@ -84,14 +87,11 @@ const ContactInfo = ({ lang = 'Hindi' }) => {
               </div>
             </div>
 
-            <a
-              href={`tel:${rawPhone}`}
-              className="hidden sm:inline-flex items-center space-x-1.5 text-xs font-extrabold text-[#0B192C] hover:text-[#0284C7] bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-xl border border-slate-300/80 transition-all cursor-pointer"
-            >
+            <span className="inline-flex items-center space-x-1.5 text-xs font-extrabold text-[#0B192C] group-hover:text-[#0284C7] bg-slate-100 group-hover:bg-slate-200 px-4 py-2 rounded-xl border border-slate-300/80 transition-all shrink-0">
               <span>{lang === 'Hindi' ? 'कॉल करें' : 'Call Now'}</span>
-            </a>
+            </span>
           </div>
-        </motion.div>
+        </motion.a>
 
         <motion.div
           variants={itemVariants}
@@ -154,7 +154,7 @@ const ContactInfo = ({ lang = 'Hindi' }) => {
               </p>
               <div className="flex items-center space-x-2 text-xs text-[#475569] font-medium mt-0.5">
                 <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                <span>09:00 AM – 08:00 PM</span>
+                <span>09:00 AM – 07:00 PM</span>
               </div>
             </div>
           </div>

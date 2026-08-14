@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Sparkles, Eye, MessageCircle, ChevronDown } from 'lucide-react';
 
@@ -15,6 +15,17 @@ const SampleGalleryModal = ({ isOpen, onClose, lang = 'Hindi' }) => {
   const [previewImage, setPreviewImage] = useState(null);
   
   const whatsappNumber = '916206966647'; 
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -162,7 +173,7 @@ const SampleGalleryModal = ({ isOpen, onClose, lang = 'Hindi' }) => {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-extrabold px-6 py-3 rounded-xl text-xs uppercase shadow-md transition-all cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-[#0B192C] via-[#1E3E62] to-[#0284C7] hover:brightness-110 text-white font-extrabold px-6 py-3 rounded-xl text-xs uppercase shadow-md transition-all cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>{lang === 'Hindi' ? 'व्हाट्सएप पर रेट पूछें' : 'Inquire on WhatsApp'}</span>

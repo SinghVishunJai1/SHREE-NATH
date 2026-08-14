@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, MessageCircle } from 'lucide-react';
 
 const ProductCard = ({ title, category, description, features, images, image, lang = 'Hindi' }) => {
@@ -14,6 +14,14 @@ const ProductCard = ({ title, category, description, features, images, image, la
   const resolvedDescription = typeof description === 'object' ? description[lang] : description;
   const resolvedFeatures = typeof features === 'object' ? features[lang] : features;
 
+  useEffect(() => {
+    if (!imgList || imgList.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % imgList.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [imgList]);
+
   return (
     <motion.div
       whileHover={{ y: -10, scale: 1.02 }}
@@ -27,11 +35,18 @@ const ProductCard = ({ title, category, description, features, images, image, la
       <div className="relative z-10 flex flex-col flex-grow">
         <div className="relative h-60 w-full bg-slate-100 overflow-hidden transition-colors duration-300 shrink-0">
           {imgList.length > 0 ? (
-            <motion.img
-              src={imgList[currentIndex]}
-              alt={resolvedTitle}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-            />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentIndex}
+                src={imgList[currentIndex]}
+                alt={resolvedTitle}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.6 }}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+              />
+            </AnimatePresence>
           ) : (
             <div className="w-full h-full flex items-center justify-center text-5xl text-[#0284C7]">
               <span>🪨</span>
@@ -44,6 +59,23 @@ const ProductCard = ({ title, category, description, features, images, image, la
             <span className="absolute top-3.5 right-3.5 text-[10px] font-black uppercase tracking-widest text-[#0B192C] bg-white/95 border border-slate-200/90 backdrop-blur-md px-3 py-1 rounded-full shadow-md z-10">
               {resolvedCategory}
             </span>
+          )}
+
+          {imgList.length > 1 && (
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex space-x-1.5 bg-black/30 px-2.5 py-1 rounded-full backdrop-blur-sm">
+              {imgList.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrentIndex(idx);
+                  }}
+                  className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${
+                    currentIndex === idx ? 'bg-white w-3' : 'bg-white/50'
+                  }`}
+                />
+              ))}
+            </div>
           )}
         </div>
 
@@ -79,7 +111,7 @@ const ProductCard = ({ title, category, description, features, images, image, la
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-extrabold py-3.5 rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-emerald-600/20 cursor-pointer"
+          className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-[#0B192C] via-[#1E3E62] to-[#0284C7] hover:brightness-110 text-white font-extrabold py-3.5 rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-[#0284C7]/20 cursor-pointer"
         >
           <MessageCircle className="w-4 h-4 stroke-[2.5]" />
           <span>{lang === 'Hindi' ? 'व्हाट्सएप पर बात करें' : 'Inquire on WhatsApp'}</span>
