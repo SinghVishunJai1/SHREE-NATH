@@ -17,6 +17,25 @@ const Navbar = ({ lang, setLang }) => {
     }, 600);
   };
 
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    setTimeout(() => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        const offset = 80; // Navbar height offset
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 150);
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-[#F8FAFC]/90 backdrop-blur-xl border-b border-slate-200/80 shadow-xs transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,19 +77,19 @@ const Navbar = ({ lang, setLang }) => {
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8 text-xs sm:text-sm font-extrabold tracking-wide text-[#0B192C]">
-            <a href="#hero" className="hover:text-[#0284C7] transition-colors relative group py-1">
+            <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="hover:text-[#0284C7] transition-colors relative group py-1">
               {lang === 'Hindi' ? 'होम' : 'Home'}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0284C7] group-hover:w-full transition-all duration-300" />
             </a>
-            <a href="#about" className="hover:text-[#0284C7] transition-colors relative group py-1">
+            <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-[#0284C7] transition-colors relative group py-1">
               {lang === 'Hindi' ? 'हमारे बारे में' : 'About Us'}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0284C7] group-hover:w-full transition-all duration-300" />
             </a>
-            <a href="#products" className="hover:text-[#0284C7] transition-colors relative group py-1">
+            <a href="#products" onClick={(e) => handleNavClick(e, 'products')} className="hover:text-[#0284C7] transition-colors relative group py-1">
               {lang === 'Hindi' ? 'उत्पाद' : 'Products'}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0284C7] group-hover:w-full transition-all duration-300" />
             </a>
-            <a href="#contact" className="hover:text-[#0284C7] transition-colors relative group py-1">
+            <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-[#0284C7] transition-colors relative group py-1">
               {lang === 'Hindi' ? 'संपर्क करें' : 'Contact'}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0284C7] group-hover:w-full transition-all duration-300" />
             </a>
@@ -134,28 +153,28 @@ const Navbar = ({ lang, setLang }) => {
           >
             <a
               href="#hero"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleNavClick(e, 'hero')}
               className="block text-[#0B192C] font-extrabold py-2.5 border-b border-slate-200/80 hover:text-[#0284C7] transition-colors"
             >
               {lang === 'Hindi' ? 'होम' : 'Home'}
             </a>
             <a
               href="#about"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleNavClick(e, 'about')}
               className="block text-[#0B192C] font-extrabold py-2.5 border-b border-slate-200/80 hover:text-[#0284C7] transition-colors"
             >
               {lang === 'Hindi' ? 'हमारे बारे में' : 'About Us'}
             </a>
             <a
               href="#products"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleNavClick(e, 'products')}
               className="block text-[#0B192C] font-extrabold py-2.5 border-b border-slate-200/80 hover:text-[#0284C7] transition-colors"
             >
               {lang === 'Hindi' ? 'उत्पाद' : 'Products'}
             </a>
             <a
               href="#contact"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleNavClick(e, 'contact')}
               className="block text-[#0B192C] font-extrabold py-2.5 border-b border-slate-200/80 hover:text-[#0284C7] transition-colors"
             >
               {lang === 'Hindi' ? 'संपर्क करें' : 'Contact'}
@@ -163,6 +182,7 @@ const Navbar = ({ lang, setLang }) => {
             
             <a
               href={`tel:${rawPhone}`}
+              onClick={() => setIsOpen(false)}
               className="flex items-center justify-center space-x-2 bg-gradient-to-r from-[#0B192C] via-[#1E3E62] to-[#0284C7] text-white font-extrabold w-full py-3.5 rounded-2xl shadow-md mt-4 text-sm uppercase tracking-wider"
             >
               <Phone className="w-4 h-4 fill-current" />
